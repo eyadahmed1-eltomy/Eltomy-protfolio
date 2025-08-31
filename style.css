@@ -1,0 +1,241 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Figtree', sans-serif;
+	background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+	color: #eee;
+	margin: 0;
+}
+
+#son {
+	border: 4px dotted white;
+	border-bottom: none;
+	border-right: none;
+	width: 10px;
+	height: 10px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+}
+
+#checkbox , .toggle {
+	display: none;
+}
+
+header {
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	padding: 40px 0;
+	margin-bottom: 110px;
+}
+
+#bigOne {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 10px 0;
+}
+
+#bigOne>img {
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	width: 300px;
+	height: 300px;
+	border: 1.3px solid white;
+}
+
+#bigOne>img:hover {
+	transform: scale(1.04);
+	-webkit-transform: scale(1.04);
+	-moz-transform: scale(1.04);
+	-ms-transform: scale(1.04);
+	-o-transform: scale(1.04);
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem;
+	background: rgba(255, 255, 255, 0.03);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(6px);
+}
+
+nav button {
+	background-color: transparent;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	color: white;
+	cursor: pointer;
+	font-size: 0.9rem;
+	transition: background-color 0.3s;
+}
+
+nav button:hover {
+	background-color: #1e88e5;
+}
+
+section:not(section#home) {
+	padding: 3rem 1.5rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section:not(section#home) h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	color: #1e88e5;
+	text-align: center;
+}
+
+section:not(section#home) p {
+	max-width: 800px;
+	margin: 0 auto;
+	font-size: 1rem;
+	line-height: 1.6;
+	text-align: center;
+	color: #ccc;
+}
+
+#contactProgs {
+	display: flex;
+	width: 200px;
+	justify-content: space-between;
+	position: relative;
+	top: 40px;
+}
+
+#contaction {
+	display: flex;
+	flex-direction: column;
+	width: 390px;
+	height: 390px;
+	background: linear-gradient(145deg, #2c5364 , #203a43 , #0f2027);
+	backdrop-filter: blur(6px);
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	margin-top: 20px;
+	padding: 20px 0;
+}
+
+#contaction input {
+	border: none;
+	background-color: transparent;
+	outline: 1.3px solid white;
+	color: white;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	width: 320px;
+	height: 35px;
+}
+
+#contaction div input:nth-last-of-type(1) {
+	height: 90px;
+	overflow: visible;
+}
+
+#contaction input::placeholder {
+	color: rgba(200, 200, 200, 0.954);
+	padding-left: 10px;
+}
+
+.removed {
+	display: none;
+}
+
+footer {
+	text-align: center;
+	padding: 1rem;
+	font-size: 0.9rem;
+	color: #aaa;
+	background-color: rgba(255, 255, 255, 0.03);
+	
+}
+
+
+
+
+/* media */
+/* mobile */
+@media screen and (max-width:480px) {
+	nav {
+		display: none;
+	}
+	/* hamburger */ 
+		#checkbox {
+		display: none;
+	}
+
+	.toggle {
+		position: relative;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		transition-duration: .3s;
+	}
+
+	.bars {
+		width: 100%;
+		height: 4px;
+		background-color: rgb(253, 255, 243);
+		border-radius: 5px;
+		transition-duration: .3s;
+	}
+
+	#checkbox:checked + .toggle #bar2 {
+		transform: translateY(14px) rotate(60deg);
+		margin-left: 0;
+		transform-origin: right;
+		transition-duration: .3s;
+		z-index: 2;
+	}
+
+	#checkbox:checked + .toggle #bar1 {
+		transform: translateY(28px) rotate(-60deg);
+		transition-duration: .3s;
+		transform-origin: left;
+		z-index: 1;
+	}
+
+	#checkbox:checked + .toggle {
+		transform: rotate(-90deg);
+	}
+
+
+}

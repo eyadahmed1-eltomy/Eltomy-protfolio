@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Eyad Ahmed | Front-End Developer</title>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&display=swap" rel="stylesheet" />
+	<!-- <link rel="stylesheet" href="style.css"> -->
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			font-family: 'Figtree', sans-serif;
+			background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+			color: #eee;
+			margin: 0;
+		}
+
+		#son {
+			border: 4px solid white;
+			border-bottom: none;
+			border-right: none;
+			width: 10px;
+			height: 10px;
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+		}
+
+		header {
+			height: 300px;
+			display: flex;
+			flex-direction: column;
+			padding: 20px 0;
+			margin-bottom: 20px;
+		}
+
+		#bigOne {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding: 10px 0;
+		}
+
+		img {
+			border-radius: 50%;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			-ms-border-radius: 50%;
+			-o-border-radius: 50%;
+			width: 300px;
+			border: 1.3px solid white;
+		}
+
+		img:hover {
+			transform: scale(1.04);
+			-webkit-transform: scale(1.04);
+			-moz-transform: scale(1.04);
+			-ms-transform: scale(1.04);
+			-o-transform: scale(1.04);
+			transition: all 0.3s ease-out;
+			-webkit-transition: all 0.3s ease-out;
+			-moz-transition: all 0.3s ease-out;
+			-ms-transition: all 0.3s ease-out;
+			-o-transition: all 0.3s ease-out;
+			border-radius: 20px;
+			-webkit-border-radius: 20px;
+			-moz-border-radius: 20px;
+			-ms-border-radius: 20px;
+			-o-border-radius: 20px;
+		}
+
+		nav {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+			padding: 1rem;
+			background: rgba(255, 255, 255, 0.03);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(6px);
+		}
+
+		nav button {
+			background-color: transparent;
+			border: none;
+			padding: 0.5rem 1rem;
+			border-radius: 8px;
+			color: white;
+			cursor: pointer;
+			font-size: 0.9rem;
+			transition: background-color 0.3s;
+		}
+
+		nav button:hover {
+			background-color: #1e88e5;
+		}
+
+		section:not(section#home) {
+			padding: 3rem 1.5rem;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		section:not(section#home) h2 {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+			color: #1e88e5;
+			text-align: center;
+		}
+
+		section:not(section#home) p {
+			max-width: 800px;
+			margin: 0 auto;
+			font-size: 1rem;
+			line-height: 1.6;
+			text-align: center;
+			color: #ccc;
+		}
+
+		footer {
+			text-align: center;
+			padding: 1rem;
+			font-size: 0.9rem;
+			color: #aaa;
+			background-color: rgba(255, 255, 255, 0.03);
+		}
+
+	</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <button onclick="scrollToSection('home')">Home</button> |
+      <button onclick="scrollToSection('features')">Features</button> |
+      <button onclick="scrollToSection('projects')">Projects</button> |
+      <button onclick="scrollToSection('blog')">Blog</button> |
+      <button onclick="scrollToSection('contact')">Contact</button> |
+      <button onclick="scrollToSection('about')">About</button>
+    </nav>
+    <section id="home">
+      <div id="bigOne">
+        <div id="identefier">
+          <h1>Eyad Ahmed</h1>
+          <h2>Front-End developer</h2>
+        </div>
+        <img src="img.jpg" alt="img">
+      </div>
+    </section>
+  </header>
+
+  <button id="scroller"><div></div></button>
+
+  <section id="features">
+    <h2>Features</h2>
+    <p>A Front-End developer and with HTML , CSS and JS</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>From Apple-style calculators to interactive name filters, each project blends design clarity with powerful functionality.</p>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+    <p>Coming soon: insights into design decisions, animation tutorials, and JavaScript breakdowns from a minimalist's perspective.</p>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I’m Eyad, a methodical developer obsessed with clean design and interactive user experiences. I craft digital tools that feel intuitive and look sharp.</p>
+  </section>
+  
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Want to collaborate or just say hi? Connect via GitHub, LinkedIn, or drop me a message—let's build something awesome together.</p>
+    <div id="contactProgs">
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Eyad | All rights reserved.
+  </footer>
+
+  <script>
+		let scroller = document.getElementById("scroller");
+		let son = scroller.children[0];
+
+		function scrollToSection(id) {
+			document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+		};
+
+		setInterval(function() {if (window.scrollY >= 414) {
+			scroller.style.cssText = `
+				width: 50px;
+				height: 50px;
+				font-size: 33px;
+				background-color: rgb(30, 136, 229);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: none;
+				color: white;
+				position: fixed;
+				right: 5px;
+				bottom: 5px;
+			`;
+			scroller.addEventListener("click", function() {
+				window.scrollTo(0,0)
+			});
+			son.id = "son";
+		} else {
+			scroller.style.cssText = `
+				display: none;
+			`;
+			son.removeAttribute("id");
+		}},1);
+	</script>
+
+</body>
+</html>
